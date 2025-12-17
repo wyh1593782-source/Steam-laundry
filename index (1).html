@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蒸汽洗衣房 - 19世纪末至20世纪中叶英美洗衣业历史</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sepia: '#f0f4f8',
+                        ink: '#1a202c',
+                        accent: '#2d5016',
+                        lightAccent: '#b8c5d1',
+                        darkAccent: '#2c3e50'
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                        sans: ['Libre Franklin', 'Arial', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'paper-texture': "url('https://www.transparenttextures.com/patterns/old-paper.png')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            }
+            .ink-splash {
+                position: relative;
+            }
+            .ink-splash::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,5 Q25,0 50,5 T100,5' stroke='%231a202c' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+                background-repeat: repeat-x;
+                background-size: 100px 10px;
+            }
+            .steel-pen {
+                font-family: 'Courier New', monospace;
+                letter-spacing: -0.5px;
+            }
+            .etching {
+                filter: contrast(1.2) brightness(0.95) grayscale(1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .paper-bg {
+                background-color: #f0f4f8;
+                background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .newspaper-border {
+                position: relative;
+                display: inline-block;
+                padding: 0.5rem 1.5rem;
+                border: 2px solid #1a202c;
+                box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+                background-color: rgba(240, 244, 248, 0.9);
+            }
+            .newspaper-border::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+                left: -8px;
+                right: 8px;
+                bottom: 8px;
+                border: 1px solid #1a202c;
+                pointer-events: none;
+            }
+            .newspaper-title {
+                font-family: 'Merriweather', serif;
+                font-weight: 700;
+                letter-spacing: -0.5px;
+                text-transform: uppercase;
+            }
+            .navy-button {
+                background-color: #1a365d;
+                color: #f0f4f8;
+                border: 2px solid #0f172a;
+                box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
+            }
+            .navy-button:hover {
+                background-color: #0f172a;
+                transform: translate(2px, 2px);
+                box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+            }
+            
+            /* 文字边框效果 */
+            .text-border {
+                -webkit-text-stroke: 1px #1a202c;
+                color: #f0f4f8;
+                text-shadow: 2px 2px 0 #1a202c;
+            }
+        }
+    </style>
+    <style>
+        /* 导入字体 */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Libre+Franklin:wght@300;400;600&display=swap');
+        
+        /* 全局样式 */
+        body {
+            font-family: 'Libre Franklin', sans-serif;
+            background-color: #f0f4f8;
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            color: #1a202c;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        
+        /* 钢笔画效果 */
+        .steel-engraving {
+            position: relative;
+        }
+        
+        .steel-engraving::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        
+        /* 时间轴样式 */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #2d5016;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #f0f4f8;
+            border: 4px solid #2d5016;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-content {
+            position: relative;
+            width: calc(50% - 30px);
+        }
+        
+        .timeline-content.left {
+            left: 0;
+        }
+        
+        .timeline-content.right {
+            left: calc(50% + 30px);
+        }
+        
+        /* 图片画廊悬停效果 */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 导航菜单动画 */
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2d5016;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* 滚动动画 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 故事卡片效果 */
+        .story-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                left: 60px !important;
+            }
+        }
+    </style>
+</head>
+<body class="paper-bg">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-sepia bg-opacity-95 shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <span class="text-2xl font-serif font-bold text-ink">蒸汽洗衣房</span>
+                <span class="ml-2 text-sm steel-pen text-accent">Steam Laundries</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-ink hover:text-accent transition-colors">首页</a>
+                <a href="#timeline" class="nav-link text-ink hover:text-accent transition-colors">历史时间轴</a>
+                <a href="#gallery" class="nav-link text-ink hover:text-accent transition-colors">图片画廊</a>
+                <a href="#section1" class="nav-link text-ink hover:text-accent transition-colors">第一展区：被看不见的劳动</a>
+                <a href="#section2" class="nav-link text-ink hover:text-accent transition-colors">第二展区：在蒸汽与噪音之间</a>
+                <a href="#section3" class="nav-link text-ink hover:text-accent transition-colors">第三展区：一个行业的兴衰</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-ink focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-sepia bg-opacity-95 shadow-lg">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="py-2 text-ink hover:text-accent transition-colors">首页</a>
+                <a href="#timeline" class="py-2 text-ink hover:text-accent transition-colors">历史时间轴</a>
+                <a href="#gallery" class="py-2 text-ink hover:text-accent transition-colors">图片画廊</a>
+                <a href="#section1" class="py-2 text-ink hover:text-accent transition-colors">第一展区：被看不见的劳动</a>
+                <a href="#section2" class="py-2 text-ink hover:text-accent transition-colors">第二展区：在蒸汽与噪音之间</a>
+                <a href="#section3" class="py-2 text-ink hover:text-accent transition-colors">第三展区：一个行业的兴衰</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首页英雄区 -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden steel-engraving">
+        <div class="absolute inset-0 z-0">
+            <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/7427add4b92742c9b20b86222e3f2e5c.png~tplv-a9rns2rl98-24:720:720.png?rcl=202512162018097B5994D4965BF43E6499&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766492290&x-signature=p8aAew%2FSh9nbkU%2FwYejK5GL%2B1sU%3D" 
+                 alt="19世纪蒸汽洗衣房" 
+                 class="w-full h-full object-cover opacity-70 object-center">
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 text-center">
+            <div class="newspaper-border mb-6">
+                <h1 class="text-5xl md:text-7xl newspaper-title text-ink mb-2 text-shadow">蒸汽洗衣房</h1>
+                <p class="text-xl md:text-2xl steel-pen text-ink">Steam Laundries</p>
+            </div>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto text-ink mb-12 bg-sepia bg-opacity-70 p-4 rounded-sm">探索19世纪末至20世纪中叶英美两国洗衣业的历史变迁与社会影响</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#timeline" class="px-8 py-3 navy-button rounded-sm">
+                    探索历史
+                </a>
+                <a href="#gallery" class="px-8 py-3 bg-sepia text-accent border border-accent hover:bg-lightAccent transition-colors rounded-sm shadow-md">
+                    浏览图片
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 text-center">
+            <a href="#intro" class="text-ink animate-bounce inline-block">
+                <i class="fa fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 介绍部分 -->
+    <section id="intro" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl newspaper-title text-ink inline-block ink-splash">工业革命与洗衣业的变革</h2>
+                </div>
+                <div class="prose prose-lg max-w-none text-ink">
+                    <p class="mb-4">19世纪末至20世纪中叶，随着工业革命的深入发展，英美两国的洗衣业经历了前所未有的变革。蒸汽动力的引入彻底改变了传统的洗衣方式，将这一古老的家务劳动转变为现代化的工业生产。</p>
+                    <p class="mb-4">蒸汽洗衣房的故事既使19世纪以来服务市场扩大与技术进步的结果，也在同时期的劳资矛盾、种族、性别话语的共同作用下，显得纷繁复杂。</p>
+                    <p>本网站将带您穿越时空，探索这一被忽视却意义重大的历史片段，了解蒸汽洗衣房这个看起来极具蒸汽朋克风格的产业的一段历史。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 历史时间轴 -->
+    <section id="timeline" class="py-16 md:py-24 bg-lightAccent bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl newspaper-title text-ink inline-block ink-splash">洗衣业历史时间轴</h2>
+            </div>
+            
+            <div class="timeline relative">
+                <!-- 时间轴项目 -->
+                <div class="timeline-item mb-16 fade-in">
+                    <div class="timeline-content left bg-sepia p-6 shadow-md">
+                        <h3 class="text-2xl font-serif font-bold text-ink mb-2">1850年代</h3>
+                        <p class="text-ink">工业革命期间，蒸汽动力开始应用于洗衣设备，第一家商业蒸汽洗衣房在英国伦敦建立。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item mb-16 fade-in">
+                    <div class="timeline-content right bg-sepia p-6 shadow-md">
+                        <h3 class="text-2xl font-serif font-bold text-ink mb-2">1860年代</h3>
+                        <p class="text-ink">美国第一家蒸汽洗衣房在纽约开业，标志着美国洗衣业现代化的开始。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item mb-16 fade-in">
+                    <div class="timeline-content left bg-sepia p-6 shadow-md">
+                        <h3 class="text-2xl font-serif font-bold text-ink mb-2">1870年代</h3>
+                        <p class="text-ink">洗衣机专利激增，包括手摇洗衣机和蒸汽驱动的洗衣设备。洗衣业开始从家庭转向工厂。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item mb-16 fade-in">
+                    <div class="timeline-content right bg-sepia p-6 shadow-md">
+                        <h3 class="text-2xl font-serif font-bold text-ink mb-2">1880年代</h3>
+                        <p class="text-ink">蒸汽熨烫设备发明，大大提高了衣物熨烫的效率和质量。洗衣店开始采用标准化的操作流程。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item mb-16 fade-in">
+                    <div class="timeline-content left bg-sepia p-6 shadow-md">
+                        <h3 class="text-2xl font-serif font-bold text-ink mb-2">1890年代</h3>
+                        <p class="text-ink">电动洗衣机开始出现，但蒸汽洗衣房仍是主流。洗衣业工会成立，为工人争取更好的工作条件。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item mb-16 fade-in">
+                    <div class="timeline-content right bg-sepia p-6 shadow-md">
+                        <h3 class="text-2xl font-serif font-bold text-ink mb-2">1900-1920年代</h3>
+                        <p class="text-ink">蒸汽洗衣房达到鼎盛时期，成为城市基础设施的重要组成部分。女性在洗衣业中的就业比例大幅增加。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content left bg-sepia p-6 shadow-md">
+                        <h3 class="text-2xl font-serif font-bold text-ink mb-2">1930-1950年代</h3>
+                        <p class="text-ink">家用洗衣机逐渐普及，商业洗衣业开始转型。干洗技术的发展进一步改变了洗衣业的格局。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 图片画廊 -->
+    <section id="gallery" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl newspaper-title text-ink inline-block ink-splash">洗衣业历史图片画廊</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 图片项目 -->
+                <div class="gallery-item fade-in">
+                    <div class="bg-sepia p-3 shadow-md">
+                        <img src="https://p3-doubao-search-sign.byteimg.com/labis/2d2ada94bd17e687be2e4ea165ef1fa1~tplv-be4g95zd3a-image.jpeg?rk3s=542c0f93&x-expires=1781438861&x-signature=TBgceVnhEvse2KeM6gRpToxX5mo%3D" 
+                             alt="19世纪旧金山华人洗衣店" 
+                             class="w-full h-64 object-cover etching">
+                        <div class="p-4">
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">19世纪旧金山华人洗衣店</h3>
+                            <p class="text-sm text-ink">华人移民在19世纪末的美国洗衣业中扮演了重要角色，他们经营的洗衣店成为城市景观的一部分。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="bg-sepia p-3 shadow-md">
+                        <img src="https://p3-doubao-search-sign.byteimg.com/mosaic-legacy/3ed1000039169be6ebd9~tplv-be4g95zd3a-image.jpeg?rk3s=542c0f93&x-expires=1781438884&x-signature=2wjvE%2FKsmRlPxZvgtSllRi3vdOY%3D" 
+                             alt="1907年电动洗衣机" 
+                             class="w-full h-64 object-cover etching">
+                        <div class="p-4">
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">1907年电动洗衣机</h3>
+                            <p class="text-sm text-ink">这台1907年的电动洗衣机代表了早期家用电器的发展，标志着洗衣技术从蒸汽动力向电力的过渡。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="bg-sepia p-3 shadow-md">
+                        <img src="https://p26-doubao-search-sign.byteimg.com/labis/bef11751a98d4508934e3f11766fb777~tplv-be4g95zd3a-image.jpeg?rk3s=542c0f93&x-expires=1781438875&x-signature=HEWKa4iBTDBwdc5y13VieTLcjIs%3D" 
+                             alt="历史老照片：洗衣洗涤的历史" 
+                             class="w-full h-64 object-cover etching">
+                        <div class="p-4">
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">城市洗衣晾衣场景</h3>
+                            <p class="text-sm text-ink">在现代烘干机发明前，城市屋顶和后院的晾衣绳是常见景象，反映了洗衣过程的最后一步。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="bg-sepia p-3 shadow-md">
+                        <img src="https://p11-doubao-search-sign.byteimg.com/tos-cn-i-be4g95zd3a/921647660486492164~tplv-be4g95zd3a-image.jpeg?rk3s=542c0f93&x-expires=1781438884&x-signature=TPRmds8%2BV5PcKbiLPQUD1yBQQqo%3D" 
+                             alt="19世纪机械洗衣机" 
+                             class="w-full h-64 object-cover etching">
+                        <div class="p-4">
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">19世纪机械洗衣机</h3>
+                            <p class="text-sm text-ink">这台机械洗衣机展示了工业革命时期的设计美学，复杂的齿轮和机械结构体现了当时的工程水平。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="bg-sepia p-3 shadow-md">
+                        <img src="https://p3-doubao-search-sign.byteimg.com/mosaic-legacy/3ed0000039acfb5d75d4~tplv-be4g95zd3a-image.jpeg?rk3s=542c0f93&x-expires=1781438884&x-signature=e9nNJFvw7TklhSCvaZPYdRHMeX8%3D" 
+                             alt="早期蒸汽洗衣设备" 
+                             class="w-full h-64 object-cover etching">
+                        <div class="p-4">
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">早期蒸汽洗衣设备</h3>
+                            <p class="text-sm text-ink">这张图片展示了一位女性操作早期蒸汽洗衣设备的场景，反映了当时洗衣工作的劳动强度。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="bg-sepia p-3 shadow-md">
+                        <img src="https://p26-doubao-search-sign.byteimg.com/labis/874944ebaf7f33c6ffb1029bbc792090~tplv-be4g95zd3a-image.jpeg?rk3s=542c0f93&x-expires=1781438875&x-signature=9kbn%2BJaEzc%2BeakmWzfnTFzbwp9A%3D" 
+                             alt="洗衣房外的晾衣场景" 
+                             class="w-full h-64 object-cover etching">
+                        <div class="p-4">
+                            <h3 class="text-xl font-serif font-bold text-ink mb-2">洗衣房外的晾衣场景</h3>
+                            <p class="text-sm text-ink">这张历史照片捕捉了城市洗衣房外的晾衣场景，晾衣绳纵横交错，成为城市贫民区的特色景观。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第一展区：被看不见的劳动 -->
+    <section id="section1" class="py-16 md:py-24 bg-lightAccent bg-opacity-30">
+        <!-- Section Hero -->
+        <div class="relative h-[70vh] flex items-center justify-center overflow-hidden mb-16">
+            <div class="absolute inset-0 z-0">
+                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/feb17e3bc0504659aed16135789fa068.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217111623F87E389EB10A82347DB5&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766546183&x-signature=1kaMCGbLTOu71WcjQLt5v4EDVuM%3D" 
+                     alt="女性洗衣工在蒸汽中工作" 
+                     class="w-full h-full object-cover opacity-80 object-center">
+            </div>
+            <div class="absolute inset-0 bg-ink bg-opacity-40 z-10"></div>
+            <div class="container mx-auto px-4 z-20 text-center">
+                <h2 class="text-4xl md:text-6xl newspaper-title text-sepia mb-6 text-shadow">第一展区｜被看不见的劳动</h2>
+                <p class="text-xl md:text-2xl text-sepia italic mb-8">性别、种族与地域</p>
+                <div class="newspaper-border bg-sepia bg-opacity-90 inline-block">
+                    <p class="text-ink text-lg md:text-xl px-6 py-4">“当洗衣被视为‘自然的女性工作’，劳动便消失在日常之中。”</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 1: 性别、种族与地域 -->
+        <div class="container mx-auto px-4 mb-24">
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-sepia p-8 shadow-md mb-12">
+                    <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                        <!-- 左侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                在19世纪末至20世纪中叶的英美社会，洗衣劳动处于一种独特而矛盾的位置：它对城市生活不可或缺，却长期被视为"非职业性"的女性工作。洗衣并非因为缺乏技术含量而被轻视，而是正因为它被深度嵌入关于女性、家庭与道德的文化想象之中，从而被自然化、私有化，并系统性地排除在"值得被看见的劳动"之外。
+                            </p>
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                洗衣工作的性别意义，并不只是"由女性承担"，而在于其背后一整套隐形的性别文化结构。在当时的公共话语中，清洁被理解为女性的天赋能力，耐心、细致、忍耐被视为"女性气质"的组成部分。正如许多同时代评论所暗示的那样，女性洗衣工的辛劳并未被解释为劳动强度过高，而是被理解为对其"自然角色"的合理延伸。无论对于黑人还是白人女性来说，洗衣业都是他们从家庭进入社会生产的重要一步。然而在这种隐形的文化逻辑下，使得洗衣劳动即便进入工厂空间，仍然难以获得与男性工业劳动相同的认可。
+                            </p>
+                            
+                            <!-- 新增图片：强悍自立的洗衣女工形象 -->
+                            <div class="bg-lightAccent p-4 shadow-md mb-6">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/a071c03490464a82bb3268addfe6ccb7.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217115342718866AAC7DAE597A8FD&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766548422&x-signature=7yYHi8pmlgRbnzmeHe1KcJSWDNk%3D" 
+                                     alt="强悍自立的洗衣女工形象" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">一个有趣的事实是，洗衣女工的形象经过了"强悍自立妇女"到"弱小少女"的转变，这里展现的是近似于亚马孙女战士的前者。</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 右侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md">
+                                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/2dee121d370a4cbc80bbe7e0acc0c92f.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217111623F87E389EB10A82347DB5&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766546183&x-signature=ZENvyxUPHKKDsopK8beoZZRZk%2FI%3D" 
+                                     alt="洗衣工作场景" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">19世纪末洗衣工作的典型场景，展示了劳动的艰辛与日常性</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-l-4 border-accent pl-6 py-2 mb-8">
+                        <p class="text-ink text-lg italic">"当洗衣被视为'自然的女性工作'，劳动便消失在日常之中。"</p>
+                    </div>
+                    
+                    <!-- 新增：黑人洗衣妇女图片和内容 -->
+                    <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                        <!-- 左侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/96741dfab2bd4dc0960b74cf14960c0e.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217115342718866AAC7DAE597A8FD&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766548422&x-signature=TJo136AEWCNCg9ut7dIGrRzF32Q%3D" 
+                                     alt="黑人洗衣妇女劳动场景" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">一个典型的黑人洗衣妇女劳动的场景</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 右侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                在美国，种族是洗衣行业的一个重要影响因子，而在族裔上更具有同质性的英国则不成问题。对于大量黑人女性以及其他非白人族裔而言，洗衣既是少数可进入的谋生渠道，也是被严格限制上升空间的行业。家庭洗衣、街区洗衣与小规模作坊在黑人社区中广泛存在，它们依赖亲属网络与社区信任，却在城市卫生法规、价格竞争与种族偏见的多重压力下不断被边缘化。
+                            </p>
+                            <p class="text-ink text-lg leading-relaxed">
+                                在具体情形下，南方洗衣业主往往会因为"懒惰与效率低下"而拒绝为她们设定最低工资。正如一些研究所指出的那样，黑人洗衣妇"既被需要，又被排斥"：她们的劳动维持着城市的清洁，却始终被置于正式经济的边缘。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-ink mb-6 text-lg leading-relaxed">
+                        地域差异进一步放大了这种结构性不平等。美国南部城市中，洗衣更多以家庭式与门办形式存在，黑人女性占据主导；而在北方与中西部工业城市，集中化的蒸汽洗衣房更早出现，劳动分工更细、监管更密集，但性别与种族的等级秩序并未因此消失，只是以更制度化的方式存在。英国的情况则显示出另一种路径：更早的城市管理与公共卫生介入，使洗衣劳动更快进入监管体系，却同样未能摆脱其作为"女性服务劳动"的定位。
+                    </p>
+                    
+                    <p class="text-ink text-lg leading-relaxed">
+                        从性别视角看，洗衣行业不仅是一段关于女性工作的历史，更是一段关于现代社会如何通过性别、种族与空间安排，将某些劳动定义为"理所当然"的历史。本展区希望引导观者意识到：洗衣劳动的被忽视，并非偶然，而是现代城市在形成过程中，有意无意地选择了哪些劳动值得被看见，哪些可以被隐去。
+                    </p>
+                </div>
+</parameter>
+</object>
+</item>
+</list>
+</parameter>
+<index>
+0
+</index>
+</function>
+    </section>
+
+    <!-- 第二展区：在蒸汽与噪音之间 -->
+    <section id="section2" class="py-16 md:py-24">
+        <!-- Section Hero -->
+        <div class="relative h-[70vh] flex items-center justify-center overflow-hidden mb-16">
+            <div class="absolute inset-0 z-0">
+                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/9b9c02f39abc4df2a07e7b2f480b4a90.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217121808FC5D86F8912BE988A0A0&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766549888&x-signature=m%2FUksHwNEfPUSzmVD1ZbaRFHyKc%3D" 
+                     alt="蒸汽洗衣房工作场景" 
+                     class="w-full h-full object-cover opacity-80">
+            </div>
+            <div class="absolute inset-0 bg-ink bg-opacity-40 z-10"></div>
+            <div class="container mx-auto px-4 z-20 text-center">
+                <h2 class="text-4xl md:text-6xl newspaper-title text-sepia mb-6 text-shadow text-border">第二展区｜在蒸汽与噪音之间</h2>
+                <p class="text-xl md:text-2xl text-sepia italic mb-8">劳工、业主与博弈的形成</p>
+                <div class="newspaper-border bg-sepia bg-opacity-90 inline-block">
+                    <p class="text-ink text-lg md:text-xl px-6 py-4">“效率的背后，是长时间站立与被忽视的风险。”</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 1: 劳动现场 -->
+        <div class="container mx-auto px-4 mb-24">
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-sepia p-8 shadow-md mb-12">
+                    <p class="text-ink mb-6 text-lg leading-relaxed">
+                        走进20世纪初的蒸汽洗衣房，迎接工人的并非工业进步的光明图景，而是高温、蒸汽、噪音与持续的身体风险。洗衣工人——其中绝大多数为女性——长时间站立操作机器，面临烫伤、机械卷入和慢性健康损耗，却只能获得微薄而不稳定的收入。
+                    </p>
+                    <p class="text-ink mb-6 text-lg leading-relaxed">
+                        正是在这样的工作环境中，洗衣工人的集体行动逐渐形成。20世纪10年代起，芝加哥、纽约、西雅图等城市相继爆发洗衣工人罢工。她们要求的不仅是更高的工资，也包括缩短工时、改善安全条件以及被承认为"真正的劳动者"。然而种族与性别话语的幽灵仍然在其上飘荡。洗衣房雇佣的白人男性司机有自己的工会，他们的工资与地位更高。而其他工人之间仍然存在隔阂，早期工会甚至并不接纳黑人妇女的加入，而出于自身利益的考量主导了工会的男性工人也有时在一定程度上背叛了他们的同行。
+                    </p>
+                    <p class="text-ink text-lg leading-relaxed">
+                        1930年代纽约的洗衣工人运动尤为典型。在经济大萧条与劳工运动高涨的背景下，洗衣工人通过工会与公开抗议，将这一高度女性化、长期被忽视的行业带入公众与政府视野。围绕最低工资法、工厂督察制度和行业规范，劳工与业主展开了持续而复杂的博弈。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 2: 穆勒诉俄勒冈案 -->
+        <div class="container mx-auto px-4 mb-24">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-3xl font-serif font-bold text-ink mb-12 text-center">穆勒诉俄勒冈案（1908）：性别、法律与劳动</h3>
+                <div class="bg-sepia p-8 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <!-- 左侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/77debf3765c64eb5b27713563e6e561d.png~tplv-a9rns2rl98-24:720:720.png?rcl=202512171359217CEF300175A2C3D6A4CA&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766555962&x-signature=M%2B%2Fz96bXWwsjMMV1HzzVDUY4nkM%3D" 
+                                     alt="穆勒诉俄勒冈案" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">此案件是美国法律史上的浓重一笔，今天俄勒冈州骄傲地在自己的网站上设置专门介绍，网站：https://www.oregonencyclopedia.org/articles/muller_v_oregon_1908_/</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 右侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <h4 class="text-2xl font-serif font-bold text-ink mb-6">穆勒诉俄勒冈案（1908）</h4>
+                            <p class="text-ink mb-6 leading-relaxed">1908年的穆勒诉俄勒冈案（Muller v. Oregon），是洗衣行业劳动史中具有象征意义的判例之一。该案围绕俄勒冈州一项限制女性每日工作时长的法律展开，其直接影响对象正包括洗衣等高强度服务行业的女性工人。</p>
+                            
+                            <div class="border-l-4 border-accent pl-4 mb-6">
+                                <p class="text-ink italic">"女性在生理结构与母性职责上的特殊性，使国家有权通过限制工时来保护她们。"</p>
+                                <p class="text-ink font-bold mt-2">— 最高法院判决，1908年</p>
+                            </div>
+                            
+                            <p class="text-ink mb-6 leading-relaxed">案件的核心推动者之一是社会改革者弗洛伦斯·凯利（Florence Kelley）及全国消费者联盟，而辩护方律师路易斯·布兰代斯（Louis D. Brandeis）则提交了一份著名的"布兰代斯简报"，以医学、社会学与统计材料论证女性劳动需要特殊保护。</p>
+                            
+                            <p class="text-ink leading-relaxed">最高法院最终支持了该法律。判决强调女性在"生理结构"与"母性职责"上的特殊性，认为国家有权通过限制工时来保护女性。这一结果为女性洗衣工人在长时间、高温劳动中的处境提供了有限的制度保障，却也在法律层面巩固了洗衣劳动的性别化框架：女性被承认为需要保护的劳动者，而非与男性平等的权利主体。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 3: 纽约洗衣工人罢工 -->
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-3xl font-serif font-bold text-ink mb-12 text-center">纽约洗衣工人罢工（1936）：从法律保护到集体行动</h3>
+                <div class="bg-sepia p-8 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <!-- 左侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <h4 class="text-2xl font-serif font-bold text-ink mb-6">从"保护性限制"到集体行动</h4>
+                            <p class="text-ink mb-6 leading-relaxed">到了20世纪30年代，穆勒案确立的"保护性的限制"已无法回应洗衣工人日益尖锐的经济压力。纽约洗衣工人罢工正是在这一背景下爆发。以洗衣工人为主的女性劳工，在工会与地方劳工组织的支持下，走上街头，要求提高工资、缩短工时并改善工作环境。</p>
+                            
+                            <div class="border-l-4 border-accent pl-4 mb-6">
+                                <p class="text-ink italic">"我们不是奴隶！我们是人！我们要尊严和公平的工资！"</p>
+                                <p class="text-ink font-bold mt-2">— 杰西·塔夫特（Jessie Taft），1936年</p>
+                            </div>
+                            
+                            <p class="text-ink mb-6 leading-relaxed">1936年，洗衣工人代表<strong>杰西·塔夫特（Jessie Taft）</strong>以将自己锁在雇主场所的方式进行抗议，使洗衣行业的劳动问题首次成为全国性新闻。这场斗争的结果并非彻底胜利。部分工资与工作条件得到改善，最低工资制度和工厂检查在实践中得到强化，但洗衣行业依然高度依赖低薪女性劳动。</p>
+                            
+                            <p class="text-ink leading-relaxed">穆勒案与纽约罢工共同揭示了洗衣行业劳资关系的核心张力：法律保护、集体行动与结构性不平等，始终纠缠在一起。</p>
+                        </div>
+                        
+                        <!-- 右侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/265cc386a6584179966a2514f2b8ea57.png~tplv-a9rns2rl98-24:720:720.png?rcl=202512171359217CEF300175A2C3D6A4CA&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766555962&x-signature=seMSFRayIjlnhgWz6jjTNgMUzvc%3D" 
+                                     alt="纽约洗衣工人罢工" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">自信的罢工工人</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三展区：一个行业的兴衰 -->
+    <section id="section3" class="py-16 md:py-24">
+        <!-- Section Hero -->
+        <div class="relative h-[70vh] flex items-center justify-center overflow-hidden mb-16">
+            <div class="absolute inset-0 z-0">
+                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/0b46f6023977414380542e88a54d19fc.png~tplv-a9rns2rl98-24:720:720.png?rcl=2025121714133868E0CCEBD873BCD7ED47&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766556818&x-signature=SCL8MdvCYaJ%2BYBOuXi4f0GzZ0sg%3D" 
+                     alt="洗衣行业的兴衰" 
+                     class="w-full h-full object-cover opacity-80">
+            </div>
+            <div class="absolute inset-0 bg-ink bg-opacity-40 z-10"></div>
+            <div class="container mx-auto px-4 z-20 text-center">
+                <h2 class="text-4xl md:text-6xl newspaper-title text-sepia mb-6 text-shadow text-border">第三展区｜一个行业的兴衰</h2>
+                <p class="text-xl md:text-2xl text-sepia italic mb-8">竞争、技术与被取代的未来</p>
+                <div class="newspaper-border bg-sepia bg-opacity-90 inline-block">
+                    <p class="text-ink text-lg md:text-xl px-6 py-4">“技术进步并非中立，它总是与社会结构、性别关系和经济权力交织在一起。”</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 1: 行业概述 -->
+        <div class="container mx-auto px-4 mb-24">
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-sepia p-8 shadow-md mb-12">
+                    <p class="text-ink mb-6 text-lg leading-relaxed">
+                        洗衣行业的崛起，是现代城市多重条件交汇的产物。19世纪末至20世纪初，快速城市化、严格的卫生观念以及家庭基础设施的不足，使专业洗衣服务成为城市生活的必需品。蒸汽洗衣房以规模化生产、机械效率和"现代性"的形象迅速扩张，重塑了城市服务业的结构。正如这个时代所流行的氛围那样，洗衣业主努力去模仿福特这样的时代英雄，自居理性、效率与进步的旗手。
+                    </p>
+                    <p class="text-ink mb-6 text-lg leading-relaxed">
+                        然而，这一行业始终处在激烈的竞争之中。蒸汽洗衣房不仅要与家庭洗衣妇和族裔小型洗衣店争夺市场，还必须在价格、速度与信任之间不断调整策略。对低成本女性劳动的高度依赖，使行业在繁荣时期得以扩张，却也埋下了结构性脆弱的隐患。同时，洗衣业不同于钢铁、机器制造以及食品生产的行业，它永远只能服务一块不大的市场，并且它的产品往往缺乏标准化——这正是业主们所极力避免的。
+                    </p>
+                    <p class="text-ink text-lg leading-relaxed">
+                        20世纪20至30年代，家用洗衣机与电力的普及彻底改变了这一格局。随着洗衣逐步回归家庭空间，外包洗衣的需求开始下降。洗衣行业并非突然消失，而是在技术替代、性别分工变化与消费模式转变的共同作用下逐渐衰退。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 2: 洗衣妇与洗衣业 -->
+        <div class="container mx-auto px-4 mb-24">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-3xl font-serif font-bold text-ink mb-12 text-center">洗衣妇与洗衣业：从个体家务到商业竞争</h3>
+                <div class="bg-sepia p-8 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                        <!-- 左侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                在19世纪末至20世纪初的城市化浪潮中，洗衣曾是家庭生活不可或缺的一项琐碎但繁重的劳动，大多数由女性承担。无论是在城市庭院、公共洗衣场（lavoirs）还是家庭内部，洗衣妇们以体力与经验完成每周甚至每日的衣物清洁工作。公众聚集的洗衣场在许多欧洲城市直到工业化前夕仍是重要的社交场所，见证了衣物清洁劳动在社会生活中的位置。
+                            </p>
+                        </div>
+                        
+                        <!-- 右侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md mb-6">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/169122d0d9fe48f0934ac0ff84696ad9.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217145917F2C29FD726E28612B265&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766559557&x-signature=1H2Xv6tAFD6cRG%2BJqFV1pXzbdtE%3D" 
+                                     alt="19世纪法国的公共露天洗衣场" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">19世纪法国的公共露天洗衣场（Lavoir）</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row-reverse gap-8 items-center mb-8">
+                        <!-- 右侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                随着蒸汽洗衣房和商业洗衣厂的出现，原本依赖体力与经验的小规模"洗衣妇"逐渐面临商业竞争。大型洗衣厂通过机械化、劳动分工和资本集中降低了单件洗涤成本，使得常常雇佣女性家工的传统模式在市场中处于不利地位。洗衣厂将洗衣从家庭与个体经济中抽离出来，塑造了新的竞争体系：市场不再仅仅是支付体力劳动，而是趋向规模化生产与技术效率的比拼。
+                            </p>
+                        </div>
+                        
+                        <!-- 左侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/0f79814972cc4cbc85f84a8f51d5f1de.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217145917F2C29FD726E28612B265&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766559557&x-signature=s0YonFtwhSjgM0XQ9pQml%2FTkZeU%3D" 
+                                     alt="洗衣工作的艰辛" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">在现代衣料、化学洗衣剂以及高效工具诞生前，洗衣是一个及其沉重痛苦的工作</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-ink text-lg leading-relaxed">
+                        洗衣业的兴起也意味着个体洗衣妇必须在价格、效率、可达性之间竞争；在部分地区，家庭洗衣仍然因价格优势或便利性保留市场份额，尤其在中低收入社区中。这种竞争既表现在洗衣厂与女工之间，也体现在消费者对不同服务模式的选择——家庭式、社区式、小型店铺式与工业化洗衣厂之间的多元化市场生态。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 3: 家用洗衣电器与洗衣厂 -->
+        <div class="container mx-auto px-4 mb-24">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-3xl font-serif font-bold text-ink mb-12 text-center">家用洗衣电器与洗衣厂：技术竞争与行业转型</h3>
+                <div class="bg-sepia p-8 shadow-md">
+                    <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                        <!-- 左侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                到了20世纪初，洗衣机技术开始进入家庭领域，这是推动洗衣行业结构性变化的关键力量。自19世纪50年代起出现的最早洗衣机由手动曲柄或蒸汽驱动，随着电力的普及，电动洗衣机逐步成为可能；到了1907年出现了早期电动机驱动的型号，奠定了技术发展的基础。
+                            </p>
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                20世纪30年代末，第一批自动家用洗衣机进入市场，使家庭能够在私密空间内完成过去需要大量体力的劳动。家用洗衣机革命性地减少了劳动时间与体力投入，使得洗衣这一曾经几乎全由女性承担的家务劳动获得显著"时间解放"，从而改变了家庭生活模式与消费行为。
+                            </p>
+                        </div>
+                        
+                        <!-- 右侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/8a6e50c9cc234bf5a7468892f3b8c114.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217145917F2C29FD726E28612B265&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766559557&x-signature=MvxMzUQQLDWTB89jW69To%2B%2BfuSw%3D" 
+                                     alt="早期的家用洗衣机" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">早期的家用洗衣机并不如宣传一般简单、安全与高效，在现在看来极其丑陋</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                        <!-- 右侧内容 -->
+                        <div class="w-full md:w-3/5">
+                            <p class="text-ink mb-6 text-lg leading-relaxed">
+                                这种技术革新的扩散逐渐削弱了传统洗衣厂的市场优势。在许多家庭具备自行洗衣设备的背景下，市场需求从依赖外部洗衣服务向自助洗衣转移。工业化洗衣厂一度凭借规模与劳动分工在市场中占据主导，但随着家用洗衣机价格下降、性能提升与普及率上升，它们的竞争空间被逐步压缩。这不仅是技术竞争，更反映了消费模式的根本变迁：从外包服务向"家庭内完成劳动"的回流趋势。
+                            </p>
+                            <p class="text-ink text-lg leading-relaxed">
+                                因此，家用洗衣机的普及与洗衣厂的衰退之间并非简单的"新技术取代旧服务"，而是一个由技术进步、劳动性别化结构变化、市场需求重构共同塑造的长期竞争过程。
+                            </p>
+                        </div>
+                        
+                        <!-- 左侧图片 -->
+                        <div class="w-full md:w-2/5">
+                            <div class="bg-lightAccent p-4 shadow-md">
+                                <img src="https://p26-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/308c21f92f8e43048ae7790f54808662.png~tplv-a9rns2rl98-24:720:720.png?rcl=20251217145917F2C29FD726E28612B265&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1766559557&x-signature=ZRFf7%2F1JI1Ln4SoqmPwK%2FdnF%2FfI%3D" 
+                                     alt="30年代的家用电器普及" 
+                                     class="w-full h-auto etching">
+                                <p class="text-sm text-ink italic mt-2">到了30年代，随着技术进一步发展以及基础设施的完善，家用电器得以在美国迅速普及，而于此同时饱受战后萧条的英国进展则慢得多</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块 3: 思考与反思 -->
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="mt-12 bg-lightAccent bg-opacity-50 p-8 shadow-md fade-in">
+                    <h3 class="text-2xl font-serif font-bold text-ink mb-6 text-center">记住洗衣业</h3>
+                    <p class="text-ink mb-6 text-lg leading-relaxed">
+                        本展区以洗衣行业的兴衰为线索，引导观者思考一个更广泛的问题：当技术改变日常生活，哪些劳动被取代，哪些记忆随之消失？
+                    </p>
+                    <p class="text-ink text-lg leading-relaxed">
+                        洗衣业的历史不仅是一个行业的变迁史，更是一部关于劳动、性别与技术的社会史。它提醒我们，技术进步并非中立，它总是与社会结构、性别关系和经济权力交织在一起。当我们享受现代便利时，不应忘记那些曾经为我们的日常生活付出劳动的人们，以及那些被技术变革所改变的生活方式和社会关系。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 洗衣记忆互动板块 -->
+    <section id="memory" class="py-16 md:py-24 bg-lightAccent bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl newspaper-title text-ink inline-block ink-splash">洗衣记忆</h2>
+                <p class="text-lg text-ink mt-4">分享您生活中的洗衣工具和老照片，一起记录洗衣的历史变迁</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- 登录区域 -->
+                <div id="login-section" class="bg-sepia p-8 shadow-md rounded-lg text-center mb-8">
+                    <h3 class="text-2xl font-serif font-bold text-ink mb-6">登录分享您的记忆</h3>
+                    <p class="text-ink mb-8">请使用微信或QQ登录，分享您的洗衣记忆</p>
+                    <div class="flex justify-center gap-6">
+                        <button id="wechat-login" class="flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                            <i class="fa fa-weixin text-2xl mr-2"></i>
+                            微信登录
+                        </button>
+                        <button id="qq-login" class="flex items-center px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                            <i class="fa fa-qq text-2xl mr-2"></i>
+                            QQ登录
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 上传区域（默认隐藏，登录后显示） -->
+                <div id="upload-section" class="bg-sepia p-8 shadow-md rounded-lg hidden">
+                    <h3 class="text-2xl font-serif font-bold text-ink mb-6">分享您的洗衣记忆</h3>
+                    
+                    <form id="memory-form" class="space-y-6">
+                        <!-- 图片上传 -->
+                        <div>
+                            <label for="memory-image" class="block text-ink font-semibold mb-2">上传照片</label>
+                            <div class="border-2 border-dashed border-ink p-8 text-center cursor-pointer hover:bg-lightAccent transition-colors rounded-lg" id="image-upload-area">
+                                <i class="fa fa-cloud-upload text-4xl text-ink mb-2"></i>
+                                <p class="text-ink">点击或拖拽照片到此处上传</p>
+                                <p class="text-sm text-ink mt-2">支持JPG、PNG格式，最大5MB</p>
+                                <input type="file" id="memory-image" class="hidden" accept="image/jpeg, image/png">
+                            </div>
+                        </div>
+                        
+                        <!-- 标题 -->
+                        <div>
+                            <label for="memory-title" class="block text-ink font-semibold mb-2">标题</label>
+                            <input type="text" id="memory-title" class="w-full px-4 py-2 bg-white border border-ink focus:outline-none focus:ring-2 focus:ring-accent" placeholder="给您的记忆起个标题">
+                        </div>
+                        
+                        <!-- 描述 -->
+                        <div>
+                            <label for="memory-description" class="block text-ink font-semibold mb-2">描述</label>
+                            <textarea id="memory-description" rows="4" class="w-full px-4 py-2 bg-white border border-ink focus:outline-none focus:ring-2 focus:ring-accent" placeholder="描述一下这张照片的故事..."></textarea>
+                        </div>
+                        
+                        <!-- 年代 -->
+                        <div>
+                            <label for="memory-year" class="block text-ink font-semibold mb-2">年代</label>
+                            <input type="text" id="memory-year" class="w-full px-4 py-2 bg-white border border-ink focus:outline-none focus:ring-2 focus:ring-accent" placeholder="照片拍摄的年代（如：1980年代）">
+                        </div>
+                        
+                        <!-- 提交按钮 -->
+                        <div class="text-center">
+                            <button type="submit" class="px-8 py-3 navy-button rounded-lg">
+                                分享记忆
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- 分享的记忆展示区 -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-serif font-bold text-ink mb-6 text-center">社区分享的记忆</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="shared-memories">
+                        <!-- 示例记忆卡片 -->
+                        <div class="bg-sepia p-4 shadow-md rounded-lg">
+                            <div class="aspect-w-16 aspect-h-9 mb-4">
+                                <div class="bg-gray-200 w-full h-48 flex items-center justify-center">
+                                    <i class="fa fa-image text-4xl text-gray-400"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-serif font-bold text-ink mb-2">奶奶的洗衣板</h4>
+                            <p class="text-sm text-ink mb-2"><i class="fa fa-calendar mr-1"></i> 1970年代</p>
+                            <p class="text-ink mb-4">这是我奶奶使用了几十年的洗衣板，虽然现在已经不用了，但它承载了很多家庭记忆。</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ink"><i class="fa fa-user mr-1"></i> 微信用户</span>
+                                <div class="flex items-center">
+                                    <button class="text-ink hover:text-accent transition-colors mr-4">
+                                        <i class="fa fa-heart-o"></i> <span>24</span>
+                                    </button>
+                                    <button class="text-ink hover:text-accent transition-colors">
+                                        <i class="fa fa-comment-o"></i> <span>5</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-sepia p-4 shadow-md rounded-lg">
+                            <div class="aspect-w-16 aspect-h-9 mb-4">
+                                <div class="bg-gray-200 w-full h-48 flex items-center justify-center">
+                                    <i class="fa fa-image text-4xl text-gray-400"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-xl font-serif font-bold text-ink mb-2">家里的第一台洗衣机</h4>
+                            <p class="text-sm text-ink mb-2"><i class="fa fa-calendar mr-1"></i> 1985年</p>
+                            <p class="text-ink mb-4">这是我家买的第一台洗衣机，当时在村里还是很稀罕的物件，邻居们都来参观。</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-ink"><i class="fa fa-user mr-1"></i> QQ用户</span>
+                                <div class="flex items-center">
+                                    <button class="text-ink hover:text-accent transition-colors mr-4">
+                                        <i class="fa fa-heart-o"></i> <span>36</span>
+                                    </button>
+                                    <button class="text-ink hover:text-accent transition-colors">
+                                        <i class="fa fa-comment-o"></i> <span>8</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 加载更多按钮 -->
+                    <div class="text-center mt-8">
+                        <button id="load-more" class="px-6 py-2 border border-ink text-ink hover:bg-lightAccent transition-colors rounded-lg">
+                            加载更多记忆
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 订阅部分 -->
+    <section id="subscribe" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl newspaper-title text-ink inline-block ink-splash mb-8">订阅历史通讯</h2>
+                <p class="text-lg text-ink mb-8">订阅我们的历史通讯，获取更多关于19世纪洗衣业历史的文章、图片和研究成果。</p>
+                <form id="subscribe-form" class="flex flex-col md:flex-row gap-4 justify-center">
+                    <input type="email" placeholder="输入您的邮箱地址" class="px-4 py-3 bg-sepia border border-ink focus:outline-none focus:ring-2 focus:ring-accent w-full md:w-auto">
+                    <button type="submit" class="px-6 py-3 navy-button">订阅</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-ink text-sepia py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">蒸汽洗衣房</h3>
+                    <p class="mb-4">探索19世纪末至20世纪中叶英美两国洗衣业的历史变迁与社会影响</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-sepia hover:text-lightAccent transition-colors"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="text-sepia hover:text-lightAccent transition-colors"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="text-sepia hover:text-lightAccent transition-colors"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="text-sepia hover:text-lightAccent transition-colors"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-sepia hover:text-lightAccent transition-colors">首页</a></li>
+                        <li><a href="#timeline" class="text-sepia hover:text-lightAccent transition-colors">历史时间轴</a></li>
+                        <li><a href="#gallery" class="text-sepia hover:text-lightAccent transition-colors">图片画廊</a></li>
+                        <li><a href="#section1" class="text-sepia hover:text-lightAccent transition-colors">第一展区</a></li>
+                        <li><a href="#section2" class="text-sepia hover:text-lightAccent transition-colors">第二展区</a></li>
+                        <li><a href="#section3" class="text-sepia hover:text-lightAccent transition-colors">第三展区</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fa fa-envelope mr-2"></i> 3116548182@qq.com</li>
+                        <li><i class="fa fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa fa-map-marker mr-2"></i> 123 History Lane, New York, NY 10001</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-sepia border-opacity-20 mt-8 pt-8 text-center">
+                <p>&copy; 2025 蒸汽洗衣房历史项目. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // 滚动动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+        
+        // 订阅表单提交
+        document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('感谢您的订阅！我们会定期发送历史通讯到您的邮箱。');
+                this.reset();
+            } else {
+                alert('请输入有效的邮箱地址。');
+            }
+        });
+
+        // 图片画廊折叠功能
+        const galleryToggle = document.getElementById('galleryToggle');
+        const galleryExtra = document.getElementById('galleryExtra');
+        
+        if (galleryToggle && galleryExtra) {
+            galleryToggle.addEventListener('click', () => {
+                if (galleryExtra.classList.contains('hidden')) {
+                    galleryExtra.classList.remove('hidden');
+                    galleryToggle.textContent = '收起图片';
+                } else {
+                    galleryExtra.classList.add('hidden');
+                    galleryToggle.textContent = '显示更多图片';
+                }
+            });
+        }
+
+        // 图片放大查看功能
+        const imageViewer = document.getElementById('imageViewer');
+        const viewerImage = document.getElementById('viewerImage');
+        const viewerCaption = document.getElementById('viewerCaption');
+        const closeViewer = document.getElementById('closeViewer');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        if (imageViewer && viewerImage && viewerCaption && closeViewer) {
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.getAttribute('data-img');
+                    const imgAlt = item.querySelector('img').alt;
+                    const imgCaption = item.querySelector('p').textContent;
+                    
+                    viewerImage.src = imgSrc;
+                    viewerImage.alt = imgAlt;
+                    viewerCaption.textContent = imgCaption;
+                    
+                    imageViewer.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                });
+            });
+
+            closeViewer.addEventListener('click', () => {
+                imageViewer.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // 恢复背景滚动
+            });
+
+            // 点击遮罩层关闭查看器
+            imageViewer.addEventListener('click', (e) => {
+                if (e.target === imageViewer) {
+                    imageViewer.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // 为页面上所有其他图片添加放大功能
+        document.querySelectorAll('img:not(.gallery-item img)').forEach(img => {
+            if (!img.closest('#imageViewer')) { // 排除查看器中的图片
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => {
+                    if (imageViewer && viewerImage && viewerCaption) {
+                        viewerImage.src = img.src;
+                        viewerImage.alt = img.alt;
+                        
+                        // 尝试查找图片的说明文字
+                        let caption = img.alt;
+                        const parentFigcaption = img.closest('figure')?.querySelector('figcaption');
+                        const nextP = img.nextElementSibling;
+                        
+                        if (parentFigcaption) {
+                            caption = parentFigcaption.textContent;
+                        } else if (nextP && nextP.tagName === 'P' && nextP.classList.contains('text-sm')) {
+                            caption = nextP.textContent;
+                        }
+                        
+                        viewerCaption.textContent = caption;
+                        imageViewer.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
+        });
+
+        // 洗衣记忆互动板块功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取DOM元素
+            const loginSection = document.getElementById('login-section');
+            const uploadSection = document.getElementById('upload-section');
+            const wechatLoginBtn = document.getElementById('wechat-login');
+            const qqLoginBtn = document.getElementById('qq-login');
+            const imageUploadArea = document.getElementById('image-upload-area');
+            const memoryImageInput = document.getElementById('memory-image');
+            const memoryForm = document.getElementById('memory-form');
+            const loadMoreBtn = document.getElementById('load-more');
+            
+            // 模拟登录功能
+            function simulateLogin(platform) {
+                alert(`模拟${platform}登录成功！`);
+                loginSection.classList.add('hidden');
+                uploadSection.classList.remove('hidden');
+            }
+            
+            // 微信登录按钮点击事件
+            if (wechatLoginBtn) {
+                wechatLoginBtn.addEventListener('click', () => {
+                    simulateLogin('微信');
+                });
+            }
+            
+            // QQ登录按钮点击事件
+            if (qqLoginBtn) {
+                qqLoginBtn.addEventListener('click', () => {
+                    simulateLogin('QQ');
+                });
+            }
+            
+            // 图片上传区域点击事件
+            if (imageUploadArea && memoryImageInput) {
+                imageUploadArea.addEventListener('click', () => {
+                    memoryImageInput.click();
+                });
+                
+                // 图片选择事件
+                memoryImageInput.addEventListener('change', (e) => {
+                    if (e.target.files && e.target.files[0]) {
+                        const file = e.target.files[0];
+                        
+                        // 检查文件大小
+                        if (file.size > 5 * 1024 * 1024) {
+                            alert('图片大小不能超过5MB');
+                            return;
+                        }
+                        
+                        // 创建预览
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            // 创建预览图片元素
+                            const previewContainer = imageUploadArea.querySelector('.preview-container');
+                            if (previewContainer) {
+                                previewContainer.remove();
+                            }
+                            
+                            const previewDiv = document.createElement('div');
+                            previewDiv.className = 'preview-container mt-4 relative';
+                            
+                            const previewImg = document.createElement('img');
+                            previewImg.src = event.target.result;
+                            previewImg.className = 'max-h-48 mx-auto';
+                            
+                            const removeBtn = document.createElement('button');
+                            removeBtn.className = 'absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center';
+                            removeBtn.innerHTML = '<i class="fa fa-times"></i>';
+                            removeBtn.onclick = function() {
+                                previewDiv.remove();
+                                memoryImageInput.value = '';
+                            };
+                            
+                            previewDiv.appendChild(previewImg);
+                            previewDiv.appendChild(removeBtn);
+                            imageUploadArea.appendChild(previewDiv);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+                
+                // 拖拽上传功能
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    imageUploadArea.addEventListener(eventName, preventDefaults, false);
+                });
+                
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    imageUploadArea.addEventListener(eventName, highlight, false);
+                });
+                
+                ['dragleave', 'drop'].forEach(eventName => {
+                    imageUploadArea.addEventListener(eventName, unhighlight, false);
+                });
+                
+                function highlight() {
+                    imageUploadArea.classList.add('bg-blue-100');
+                }
+                
+                function unhighlight() {
+                    imageUploadArea.classList.remove('bg-blue-100');
+                }
+                
+                imageUploadArea.addEventListener('drop', handleDrop, false);
+                
+                function handleDrop(e) {
+                    const dt = e.dataTransfer;
+                    const files = dt.files;
+                    
+                    if (files.length > 0) {
+                        memoryImageInput.files = files;
+                        const event = new Event('change');
+                        memoryImageInput.dispatchEvent(event);
+                    }
+                }
+            }
+            
+            // 表单提交事件
+            if (memoryForm) {
+                memoryForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const title = document.getElementById('memory-title').value;
+                    const description = document.getElementById('memory-description').value;
+                    const year = document.getElementById('memory-year').value;
+                    const image = document.getElementById('memory-image').files[0];
+                    
+                    // 表单验证
+                    if (!title || !description || !year || !image) {
+                        alert('请填写所有必填字段并上传图片');
+                        return;
+                    }
+                    
+                    // 模拟表单提交
+                    alert('感谢您分享洗衣记忆！您的分享将在审核后显示在社区中。');
+                    
+                    // 重置表单
+                    memoryForm.reset();
+                    
+                    // 移除预览图片
+                    const previewContainer = imageUploadArea.querySelector('.preview-container');
+                    if (previewContainer) {
+                        previewContainer.remove();
+                    }
+                });
+            }
+            
+            // 加载更多按钮点击事件
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', () => {
+                    // 模拟加载更多内容
+                    loadMoreBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 加载中...';
+                    
+                    setTimeout(() => {
+                        loadMoreBtn.innerHTML = '加载更多记忆';
+                        alert('已加载全部内容');
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
